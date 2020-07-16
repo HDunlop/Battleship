@@ -76,17 +76,20 @@ def main():
     hitCoordinates = []
     didHit = False
     lastHitCoord = (0,0)
+    totalPlays = 0
 
     for i in range(len(remainingShips)):
         current = remainingShips[i]
         current.addCoords(placeShip(shipPlacement(current.size),current))
 
     while True:
+        totalPlays += 1
         printMoves(moves)
-        if didHit:
-            pass
+        didHit = False
+
         if len(remainingShips) == 0:
             break
+
         _ = input("Press anything to continue\n")
 
         attack = decision(moves,remainingShips,hitCoordinates,starter)
@@ -101,16 +104,19 @@ def main():
                 didHit = True
                 hitCoordinates.append(attack)
                 action(attack[0],attack[1],red)
-                if returnValue != 2:
+                if returnValue == 2:
+                    for coord in current.coords:
+                        moves[coord[1]][coord[0]] = "X"
+                        hitCoordinates.remove(coord)
+                else:
                     remainingShips.append(current)
-                didHit = False
-            remainingShips.append(current)
-
+            else:
+                remainingShips.append(current)
         if not didHit:
             print(colored("\nAI missed",'red'))
             action(attack[0],attack[1],blue)
             moves[attack[1]][attack[0]] = "M"
 
-    print("Game was ended.")
+    print("Game was finished in "+str(totalPlays)+" moves.")
 
 main()

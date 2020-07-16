@@ -82,6 +82,7 @@ def main():
 
   while True:
     printMoves(moves)
+    break
 
     if didHit:
       pass

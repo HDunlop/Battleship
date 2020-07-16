@@ -107,9 +107,6 @@ def loopRandomLocations(p3,h2):
                         locFre[coord] += 1
     return locFre
 
-
-
-
 def decision(m1,s1,h1,starter):
     if (len(starter) >= 1) and (len(h1) == 0):
         return starter.pop(0)

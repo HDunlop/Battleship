@@ -13,6 +13,7 @@ def checkPossibleShipPositionsOverlap(s3,p2):
               if otherCoord == currentCoord:
                 p2[currentShip.name].remove(currentCoords)
                 end = True
+        end = True
     s3.append(currentShip)
   return p2
 
@@ -87,20 +88,20 @@ def loopRandomLocations(p3,h2):
 
 
 
-def decision(m1,s1,h1,starter,hunter):
+def decision(m1,s1,h1,starter):
   if (len(starter) >= 1) and (len(h1) == 0):
     print("\nToo early for logic...")
     return starter.pop(0)
-
-  if hunter[0]:
-    print("\nTime for some hunting bbbaaabyyyyyyyy!")
-    choice = (0,0)
-    print("Final decision: "+str(choice))
-    return choice
-    pass
-
-  elif not hunter[0]:
-
+  #
+  # if hunter[0]:
+  #   print("\nTime for some hunting bbbaaabyyyyyyyy!")
+  #   choice = (0,0)
+  #   print("Final decision: "+str(choice))
+  #   return choice
+  #   pass
+  #
+  # elif not hunter[0]:
+  if True:
     print("Last position was not a hit")
     possibleLocations = {}
     print("\nCalling 'definePossiblePositionsForEveryShip'...")

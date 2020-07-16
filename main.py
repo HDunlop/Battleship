@@ -101,9 +101,10 @@ def main():
                 didHit = True
                 hitCoordinates.append(attack)
                 action(attack[0],attack[1],red)
-                if returnValue == 2:
-                    didHit = False
-                    remainingShips.remove(current)
+                if returnValue != 2:
+                    remainingShips.append(current)
+                didHit = False
+            remainingShips.append(current)
 
         if not didHit:
             print(colored("\nAI missed",'red'))

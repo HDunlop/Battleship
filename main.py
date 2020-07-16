@@ -51,10 +51,10 @@ def placeShip(choice,currentShip):
 
 
 def main():
-    global moves,permValues,red,blue,black,mapper,sizeBtwn
+    global moves,permValues,red,blue,black,orange,mapper,sizeBtwn
     moves,permValues = create2DListOfMoves()
 
-    red,blue,black = settingUpColoUUUUrs()
+    red,blue,black,orange = settingUpColoUUUUrs()
     mapper,sizeBtwn = settingUpBoard()
     drawCoords(moves)
 
@@ -85,6 +85,10 @@ def main():
     while True:
         totalPlays += 1
         printMoves(moves)
+
+        if didHit:
+            starter = []
+
         didHit = False
 
         if len(remainingShips) == 0:
@@ -103,9 +107,10 @@ def main():
                     lastHitCoord = attack
                 didHit = True
                 hitCoordinates.append(attack)
-                action(attack[0],attack[1],red)
+                action(attack[0],attack[1],orange)
                 if returnValue == 2:
                     for coord in current.coords:
+                        action(coord[0],coord[1],red)
                         moves[coord[1]][coord[0]] = "X"
                         hitCoordinates.remove(coord)
                 else:

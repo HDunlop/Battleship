@@ -7,8 +7,9 @@ pygame.font.init()
 font = pygame.font.SysFont('Lindsey.ttf', 60)
 
 def settingUpColoUUUUrs():
-    global red, blue, light_blue, dark_blue, black, white
+    global red, blue, light_blue, dark_blue, black, white, orange
 
+    orange = pygame.Color(255,128,0)
     red = pygame.Color(255, 0, 0)
     blue = pygame.Color(51,153,255)
     light_blue = pygame.Color(51,255,255)
@@ -16,7 +17,7 @@ def settingUpColoUUUUrs():
     black = pygame.Color(0, 0, 0)
     white = pygame.Color(255, 255, 255)
 
-    return red,blue,black
+    return red,blue,black,orange
 
 def drawBoard():
     global rectangles,sizeBtwn,mapper,factor

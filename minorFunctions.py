@@ -24,10 +24,12 @@ def create2DListOfMoves():
 def printMoves(copy1):
     for row in copy1:
         for item in row:
-            if item == "1":
-                print(item,end=' ')
+            if item == "M":
+                print(colored(item,'red'),end=' ')
+            elif item == "X":
+                print(colored(item,'green'),end=' ')
             elif item == "0":
-                print(colored(item,'yellow'),end=' ')
+                print(colored(item,'white'),end=' ')
             elif item == "0 ":
                 print("\n"+colored(item,'red'),end=' ')
             else:

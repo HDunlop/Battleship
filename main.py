@@ -24,7 +24,6 @@ def shipPlacement(size):
             done = True
     return choice
 
-
 def placeShip(choice,currentShip):
     x = choice[0][0]
     y = choice[0][1]
@@ -47,8 +46,6 @@ def placeShip(choice,currentShip):
             permValues.append((x-i,y))
             shipCoords.append((x-i,y))
     return shipCoords
-
-
 
 def main():
     global moves,permValues,red,blue,black,orange,mapper,sizeBtwn
